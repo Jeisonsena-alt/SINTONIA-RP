@@ -472,9 +472,11 @@
   // ════════════════════════════════════════════════
   function refreshAuthUI(user){
     var adminBar = document.querySelector('.admin-bar');
+    var adminConfig = document.getElementById('adminConfig');
     if(!remoteOn){
       // Modo local: el dueño edita libremente en su navegador
       document.getElementById('adminAuthSection').style.display = 'none';
+      if(adminConfig) adminConfig.style.display = '';
       adminMode = true;
       if(adminBar) adminBar.style.display = '';
       return;
@@ -483,6 +485,8 @@
     document.getElementById('adminAuthSection').style.display = '';
     document.getElementById('authLoggedOut').style.display = loggedIn ? 'none' : '';
     document.getElementById('authLoggedIn').style.display = loggedIn ? '' : 'none';
+    // El público NO ve la configuración: solo aparece tras iniciar sesión
+    if(adminConfig) adminConfig.style.display = loggedIn ? '' : 'none';
     if(loggedIn) document.getElementById('authWho').textContent = 'Sesión iniciada: ' + (user.email || 'admin');
     adminMode = loggedIn;
     document.getElementById('toggleAdmin').checked = loggedIn;
