@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sintonia RP — Tienda Oficial</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- BOTÓN AJUSTES -->
+<button class="gear-btn" id="gearBtn" title="Personalizar diseño">
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+</button>
+
+<!-- PÁGINA 1: SPLASH -->
+<div class="page" id="page-splash">
+  <img class="bg-gif" src="fondo.gif" alt="Fondo">
+  <div class="overlay"></div>
+  <div class="splash-center">
+    <div class="sp-logo" id="spLogo"><img src="logo.png" alt="Logo" id="spLogoImg"></div>
+    <div class="sp-title" id="spTitle">SINTONIA<em>ROLEPLAY</em></div>
+    <div class="sp-sub" id="spSub">Servidor FiveM &nbsp;·&nbsp; Los Santos</div>
+    <div class="gold-line"></div>
+    <button class="enter-btn" id="btnEntrar">&#x1F6D2;&nbsp; Tienda Sintonia RP</button>
+    <div class="online-badge"><div class="dot"></div>Servidor en línea</div>
+  </div>
+  <div class="sp-footer">© 2026 Sintonia RP · Todos los derechos reservados</div>
+</div>
+
+<!-- PÁGINA 2: TIENDA -->
+<div class="page" id="page-tienda">
+  <nav class="navbar">
+    <div class="nav-logo" id="navLogo"><img src="logo.png" alt="Logo Sintonia RP" id="navLogoImg"></div>
+    <div class="nav-right">
+      <span class="nav-tag" id="navTag">Tienda Oficial</span>
+      <button class="cart-btn" id="btnCarrito">
+        <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Carrito <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+  <div class="tabs-bar">
+    <button class="tab-btn active" data-tab="armas">
+      <svg viewBox="0 0 24 24"><path d="M3 12h13M18 7l4 5-4 5M3 7v2a2 2 0 002 2h2"/></svg>Armas
+    </button>
+    <button class="tab-btn" data-tab="vehiculos">
+      <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg>Vehículos
+    </button>
+    <button class="tab-btn" data-tab="vip">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Paquetes VIP
+    </button>
+  </div>
+  <div class="section-hero">
+    <div class="section-hero-left">
+      <h2 id="sectionTitle">Armas</h2>
+      <p id="sectionDesc">Armamento disponible para tu personaje</p>
+    </div>
+    <div class="section-hero-right">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar..." autocomplete="off">
+        <button class="search-clear" id="searchClear" title="Limpiar" aria-label="Limpiar búsqueda">&times;</button>
+      </div>
+      <div class="section-badge" id="sectionBadge">4 artículos</div>
+    </div>
+  </div>
+  <div class="admin-bar">
+    <span class="admin-label">Panel administrador <span id="saveStatus" style="color:#4CAF50;margin-left:8px;font-size:9px;opacity:0;transition:opacity .3s">✓ Guardado</span></span>
+    <div class="admin-toggle">
+      <button class="admin-add-btn" id="btnAgregar">+ Agregar artículo</button>
+      <span class="sw-label">Modo admin</span>
+      <label class="switch"><input type="checkbox" id="toggleAdmin" checked><span class="slider-sw"></span></label>
+    </div>
+  </div>
+  <div class="items-section" id="contentArea"></div>
+  <div class="shop-footer"><p id="shopFooterText">© 2026 Sintonia RP · Servidor FiveM · Todos los derechos reservados</p></div>
+</div>
+
+<!-- PÁGINA 3: CARRITO -->
+<div class="page" id="page-carrito">
+  <nav class="cart-nav">
+    <b id="cartNavTitle">Carrito de compras</b>
+    <button class="back-link" id="btnSeguir">
+      <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Seguir comprando
+    </button>
+  </nav>
+  <div class="cart-wrap">
+    <div class="cart-list" id="cartList"></div>
+    <div class="cart-summary">
+      <div class="cs-title">Resumen del pedido</div>
+      <div class="cs-row"><span id="csCount">0 artículos</span><span id="csSubtotal">$0</span></div>
+      <div class="cs-total"><span>Total a pagar</span><b id="csTotal">$0 USD</b></div>
+
+      <div class="cs-label">Datos de entrega</div>
+      <input class="cs-field" id="csNombre" type="text" placeholder="Nombre / ID en el servidor">
+      <input class="cs-field" id="csContacto" type="text" placeholder="Discord o correo de contacto">
+
+      <div class="cs-label">Método de pago</div>
+      <div class="pay-methods" id="payMethods"></div>
+      <div class="pay-instructions" id="payInstructions"></div>
+
+      <button class="checkout-btn" id="btnCheckout" disabled>Confirmar pedido</button>
+    </div>
+  </div>
+  <div class="shop-footer"><p>© 2026 Sintonia RP · Servidor FiveM · Todos los derechos reservados</p></div>
+</div>
+
+<!-- BACKDROP + PANEL DE DISEÑO -->
+<div class="panel-backdrop" id="panelBackdrop"></div>
+<div class="design-panel" id="designPanel">
+  <div class="dp-header">
+    <h3>Personalizar</h3>
+    <button class="dp-close" id="dpClose">&times;</button>
+  </div>
+  <div class="dp-body">
+
+    <div id="adminAuthSection" style="display:none">
+      <div class="dp-section-title">Acceso administrador</div>
+      <div id="authLoggedOut">
+        <div class="dp-field">
+          <label>Correo</label>
+          <input type="text" id="authEmail" autocomplete="username" placeholder="admin@tucorreo.com">
+        </div>
+        <div class="dp-field">
+          <label>Contraseña</label>
+          <input type="password" id="authPass" autocomplete="current-password" placeholder="••••••••">
+        </div>
+        <button class="dp-btn dp-btn-save" id="btnLogin">Iniciar sesión</button>
+      </div>
+      <div id="authLoggedIn" style="display:none">
+        <p class="dp-hint" id="authWho" style="color:#4CAF50"></p>
+        <button class="dp-btn dp-btn-reset" id="btnLogout">Cerrar sesión</button>
+      </div>
+      <p class="dp-hint">Inicia sesión para editar el catálogo, los precios y el diseño. Los visitantes solo pueden ver y comprar.</p>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Paletas rápidas</div>
+      <div class="preset-row" id="presetRow"></div>
+      <p class="dp-hint">Toca una paleta para aplicarla al instante.</p>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Métodos de pago</div>
+      <div id="methodsList"></div>
+      <button class="dp-btn dp-btn-reset" id="btnAddMethod" style="margin-top:4px">+ Agregar método de pago</button>
+      <p class="dp-hint">Agrega PayPal, transferencia, Binance, Nequi, etc. El cliente verá estos métodos al pagar y elegirá uno.</p>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Pedidos por Discord</div>
+      <div class="dp-field">
+        <label>URL del webhook de Discord</label>
+        <input type="text" id="txtWebhook" placeholder="https://discord.com/api/webhooks/..." autocomplete="off">
+      </div>
+      <p class="dp-hint">Cuando un cliente confirme su pedido, se publicará automáticamente en tu canal de Discord. En Discord: Ajustes del canal → Integraciones → Webhooks → Nuevo webhook → Copiar URL. Si lo dejas vacío, el pedido se mostrará solo en pantalla.</p>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Fondo de entrada (GIF)</div>
+      <div class="logo-drop" id="gifDrop">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span>Subir / cambiar GIF de fondo</span>
+      </div>
+      <img class="logo-thumb" id="gifThumb" alt="GIF">
+      <p class="dp-hint">El GIF se muestra de fondo en la pantalla de entrada. Puedes cambiarlo por cualquier imagen o GIF.</p>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Tipografía</div>
+      <div class="dp-field">
+        <label>Combinación de fuentes</label>
+        <select class="dp-select" id="fontSelect">
+          <option value="barlow">Barlow — Bold / Deportivo (actual)</option>
+          <option value="bebas">Bebas Neue + DM Sans — Editorial</option>
+          <option value="space">Space Grotesk + Inter — Tech moderno</option>
+          <option value="syne">Syne + Outfit — Geométrico minimal</option>
+          <option value="oswald">Oswald + Roboto — Impacto clásico</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Bordes</div>
+      <div class="dp-field">
+        <label>Redondeo de tarjetas</label>
+        <div class="range-row">
+          <input type="range" id="radiusRange" min="0" max="24" value="8">
+          <span class="range-val" id="radiusVal">8px</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Colores</div>
+      <div class="color-row dp-field">
+        <input type="color" id="c-gold" value="#E8A020">
+        <div class="cr-info"><span class="cr-name">Acento / dorado</span><span class="cr-hex" id="hex-gold">#E8A020</span></div>
+      </div>
+      <div class="color-row dp-field">
+        <input type="color" id="c-black" value="#0D0D0D">
+        <div class="cr-info"><span class="cr-name">Fondo principal</span><span class="cr-hex" id="hex-black">#0D0D0D</span></div>
+      </div>
+      <div class="color-row dp-field">
+        <input type="color" id="c-dark" value="#141414">
+        <div class="cr-info"><span class="cr-name">Navbar / barras</span><span class="cr-hex" id="hex-dark">#141414</span></div>
+      </div>
+      <div class="color-row dp-field">
+        <input type="color" id="c-dark2" value="#1A1A1A">
+        <div class="cr-info"><span class="cr-name">Tarjetas</span><span class="cr-hex" id="hex-dark2">#1A1A1A</span></div>
+      </div>
+      <div class="color-row dp-field">
+        <input type="color" id="c-text" value="#F0E8D8">
+        <div class="cr-info"><span class="cr-name">Texto</span><span class="cr-hex" id="hex-text">#F0E8D8</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Logo</div>
+      <div class="toggle-row">
+        <span>Mostrar logo en portada</span>
+        <label class="switch"><input type="checkbox" id="toggleSpLogo"><span class="slider-sw"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span>Logo en navbar (en vez de texto)</span>
+        <label class="switch"><input type="checkbox" id="toggleNavLogo" checked><span class="slider-sw"></span></label>
+      </div>
+      <div class="logo-drop" id="logoDrop">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span>Subir / cambiar logo</span>
+      </div>
+      <img class="logo-thumb" id="logoThumb" alt="Logo">
+      <p class="dp-hint">El logo se aplica en portada y navbar según los interruptores de arriba.</p>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Textos de portada</div>
+      <div class="dp-field">
+        <label>Nombre principal</label>
+        <input type="text" id="txtTitle" value="SINTONIA" maxlength="18">
+      </div>
+      <div class="dp-field">
+        <label>Subtítulo del nombre</label>
+        <input type="text" id="txtTitleEm" value="ROLEPLAY" maxlength="18">
+      </div>
+      <div class="dp-field">
+        <label>Línea descriptiva</label>
+        <input type="text" id="txtSub" value="Servidor FiveM · Los Santos" maxlength="40">
+      </div>
+    </div>
+
+    <div>
+      <div class="dp-section-title">Otros textos</div>
+      <div class="dp-field">
+        <label>Etiqueta de la navbar</label>
+        <input type="text" id="txtNavTag" value="Tienda Oficial" maxlength="30">
+      </div>
+      <div class="dp-field">
+        <label>Pie de página (footer)</label>
+        <input type="text" id="txtFooter" value="© 2026 Sintonia RP · Servidor FiveM · Todos los derechos reservados" maxlength="80">
+      </div>
+    </div>
+
+    <div class="dp-actions">
+      <button class="dp-btn dp-btn-save" id="dpSave">Guardar cambios</button>
+      <button class="dp-btn dp-btn-reset" id="dpReset">Restaurar diseño original</button>
+      <p class="dp-hint">Tus cambios se guardan en este navegador y se mantienen al volver a abrir la tienda.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"><div class="toast-dot"></div><span id="toastMsg"></span></div>
+<input type="file" id="imgInput" accept="image/*" style="display:none">
+<input type="file" id="logoInput" accept="image/*" style="display:none">
+<input type="file" id="gifInput" accept="image/*" style="display:none">
+
+<!-- MODAL EDITAR ARTÍCULO -->
+<div class="modal-bg" id="editModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Editar artículo</h3>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button class="mf-cancel" id="modalCancel">Cancelar</button>
+      <button class="mf-save" id="modalSave">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Configuración local de desarrollo (no se necesita en GitHub Pages)
+.claude/
+
+# Sistema
+Thumbs.db
+.DS_Store
+desktop.ini
